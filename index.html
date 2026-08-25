@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Validación de Documento Oficial - Municipalidad de Paine</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --primary-light: #e6f0fa;
+            --success: #059669;
+            --success-bg: #ecfdf5;
+            --danger: #dc2626;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --bg: #f1f5f9;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bg); display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; padding: 20px; color: var(--text-dark); }
+        
+        /* Pantalla de Carga */
+        #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--bg); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .spinner { width: 50px; height: 50px; border: 5px solid #cbd5e1; border-top: 5px solid var(--primary); border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .loading-text { font-size: 14px; color: var(--primary); font-weight: bold; text-align: center; line-height: 1.6; letter-spacing: 0.5px; }
+        
+        .container { background-color: #ffffff; width: 100%; max-width: 700px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); overflow: hidden; display: none; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, #002244 100%); color: #fff; padding: 25px 30px; text-align: center; }
+        .header .logo { font-size: 40px; margin-bottom: 5px; }
+        .header .title { font-size: 20px; font-weight: bold; letter-spacing: 0.5px; }
+        .header .subtitle { font-size: 13px; opacity: 0.9; margin-top: 5px; }
+        .status-box { background-color: var(--success-bg); color: var(--success); border-left: 5px solid var(--success); padding: 15px 20px; text-align: center; font-weight: bold; border-radius: 0; margin: 20px; font-size: 16px; }
+        table { width: calc(100% - 40px); margin: 0 20px 20px 20px; border-collapse: collapse; font-size: 14px; }
+        th, td { padding: 12px 15px; border: 1px solid var(--border); text-align: left; }
+        th { background-color: #f8fafc; color: var(--text-muted); text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; width: 35%; font-weight: 600; }
+        td { font-weight: 500; }
+        .highlight { color: var(--primary); font-weight: bold; }
+        .footer { font-size: 11px; color: var(--text-muted); text-align: center; border-top: 1px solid var(--border); padding: 20px; background-color: #fafafa; line-height: 1.6; }
+        .hash { font-family: 'Courier New', monospace; word-break: break-all; color: var(--primary); background: #f1f5f9; padding: 5px 10px; border-radius: 4px; display: inline-block; }
+        .badge { display: inline-block; background: var(--primary-light); color: var(--primary); padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+    </style>
+    <script>
+        (function() { const auth = "munipaine.github.io"; const cur = window.location.hostname; if (cur !== auth && cur !== "localhost" && cur !== "127.0.0.1" && window.location.protocol !== "file:") { document.body.innerHTML="ACCESO RESTRINGIDO"; window.location.replace("https://" + auth + window.location.pathname); } })();
+        document.oncontextmenu = () => false;
+    </script>
+</head>
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+        <div class="loading-text">VERIFICANDO AUTENTICIDAD<br>MUNICIPALIDAD DE PAINE</div>
+    </div>
+
+    <div class="container" id="main-content">
+        <div class="header">
+            <div class="logo">🏛️</div>
+            <div class="title">MUNICIPALIDAD DE PAINE</div>
+            <div class="subtitle">Certificado de Permiso de Circulación Electrónico</div>
+        </div>
+        <div class="status-box">✓ DOCUMENTO VÁLIDO Y VIGENTE</div>
+        <table>
+            <tr><th>Placa Patente</th><td class="highlight" style="font-size:18px;">BJBD51-5</td></tr>
+            <tr><th>Folio Emisión</th><td>SC-0000010103</td></tr>
+            <tr><th>Propietario Legal</th><td>CRISTIAN ANDRES AROS AROS</td></tr>
+            <tr><th>Tipo de Vehículo</th><td>AUTOMOVIL</td></tr>
+            <tr><th>Marca</th><td>KIA MOTORS</td></tr>
+            <tr><th>Modelo</th><td>RIO JB EX 1.4</td></tr>
+            <tr><th>Año de Fabricación</th><td>2008</td></tr>
+            <tr><th>Color</th><td>ROJO</td></tr>
+            <tr><th>N° Motor</th><td>G4EEH132300</td></tr>
+            <tr><th>N° Chasis / VIN</th><td>KNADE221286349234</td></tr>
+            <tr><th>Fecha de Emisión</th><td>24 AGO 2026</td></tr>
+            <tr><th>Fecha de Vencimiento</th><td style="color: var(--danger); font-weight: bold;">31 MAR 2027</td></tr>
+        </table>
+        <div class="footer">
+            <span class="badge">🔒 Firma Electrónica Avanzada (SHA-256)</span><br><br>
+            <span class="hash">9c690aff92a79e78bfe986fb86db42fa6255c5171de2f144137531222eebaf8b</span><br><br>
+            Documento consultado en línea el <span id="clock"></span><br>
+            Municipalidad de Paine - Sistema de Verificación de Permisos de Circulación
+        </div>
+    </div>
+    
+    <script>
+        setTimeout(() => {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+            document.getElementById('clock').innerText = new Date().toLocaleString();
+        }, 2000);
+    </script>
+</body>
+</html>
